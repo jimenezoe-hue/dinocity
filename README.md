@@ -1,23 +1,28 @@
 # Dino City Runner
 
-Endless runner 3D para DescuentoM. Hecho con Godot 4.
+Endless runner 3D para DescuentoM — Godot 4.
 
 ## Controles
-- Flecha izquierda / derecha: cambiar de carril
-- Flecha arriba o Espacio: saltar
+- ← → : cambiar de carril
+- ↑ o Espacio : saltar
 
-## Cómo empezar
-1. Abre el proyecto en Godot 4
-2. Crea una escena 3D (`Main.tscn`)
-3. Añade un nodo `CharacterBody3D` y renómbralo a `Player`
-4. Arrastra el script `scripts/player.gd` al nodo Player
-5. Añade un `CollisionShape3D` y un `MeshInstance3D` (o CSGBox3D) como hijos
-6. Añade una `Camera3D` como hijo del Player (colócala detrás y arriba)
-7. Añade un suelo (`CSGBox3D` o `StaticBody3D`) largo en Z
-8. Ejecuta la escena (F6)
+## Debug
+- **F1** : invencible
+- **F2** : velocidad x2
+- **F3** : velocidad normal
 
 ## Estructura
 ```
 scripts/
-  player.gd    # Movimiento, salto y cambio de carril
+  player.gd       # Dino: movimiento, salto, estados
+  game_manager.gd # Puntuación y estado del juego
+  object_pool.gd  # Pool de obstáculos e ítems
+  spawner.gd      # Generador de obstáculos
+scenes/
+  main.tscn       # Escena principal
 ```
+
+## Cómo probar
+1. Abre el proyecto en Godot 4
+2. Abre `scenes/main.tscn`
+3. Presiona F6
